@@ -2,9 +2,10 @@
     "name": "jsx",
     "displayName": "ExtendScript",
     "description": "Adobe ExtendScript Language Support for Visual Studio Code",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "hennamann",
     "repository": "https://github.com/Hennamann/ExtendScript-for-Visual-Studio-Code",
+    "icon": "extendscript.png",
     "engines": {
         "vscode": "^1.13.0"
     },
