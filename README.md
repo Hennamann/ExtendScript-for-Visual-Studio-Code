@@ -1,2 +1,3 @@
 # ExtendScript Syntax Highlighting for Visual Studio Code
-This extension adds syntax highlighting for Adobe ExtendScript files in Visual Studio Code, it supports both .jsx and .jsxinc files.
+This extension provides support for Adobe ExtendScript in Visual Studio Code.
+It supports both .jsx and .jsxinc files.

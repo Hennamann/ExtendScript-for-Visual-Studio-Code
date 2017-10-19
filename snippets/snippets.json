@@ -1,0 +1,260 @@
+{
+	"#inc": {
+		"prefix": "#inc",
+		"body": "#include \"${1:${2:untitled}.jsx${3:inc}}\"",
+		"description": "#include",
+		"scope": "source.js"
+	},
+	"#ta": {
+		"prefix": "#ta",
+		"body": "#target \"${1:${11:InDesign}${12:Illustrator}${13:Photoshop}}\"",
+		"description": "#target",
+		"scope": "source.js"
+	},
+	"#tae": {
+		"prefix": "#tae",
+		"body": "#targetengine \"${0:session}\"",
+		"description": "#targetengine",
+		"scope": "source.js"
+	},
+	"encoding": {
+		"prefix": "encoding",
+		"body": "$.appEncoding = \"${0:utf-8}\";",
+		"description": "$.appEncoding",
+		"scope": "source.js"
+	},
+	"lo": {
+		"prefix": "lo",
+		"body": "\\$.writeln(${0});",
+		"description": "$.writeln",
+		"scope": "source.js"
+	},
+	"(fu": {
+		"prefix": "(fu",
+		"body": "(function(){\n  ${0:// body...}\n})();",
+		"description": "(function(){})()",
+		"scope": "source.js"
+	},
+	"ns": {
+		"prefix": "ns",
+		"body": "${1:NameSpace} = this.${1:NameSpace} ${2|\\|\\|,=|} {};\n${0:}",
+		"description": "Name Space",
+		"scope": "source.js"
+	},
+	"add": {
+		"prefix": "add",
+		"body": "\nadd('${1:something}','${2:something}','${3:something}');\n",
+		"description": "add something",
+		"scope": "source.jsx"
+	},
+	"align": {
+		"prefix": "align",
+		"body": "align(${10:align_distribute_items/* Array of PageItem */},\n  AlignOptions.${20|BOTTOM_EDGES,HORIZONTAL_CENTERS,LEFT_EDGES,RIGHT_EDGES,TOP_EDGES,VERTICAL_CENTERS|}\n  ${30:,AlignDistributeBounds.${31|ITEM_BOUNDS,MARGIN_BOUNDS,PAGE_BOUNDS,SPREAD_BOUNDS|}\n  ${40:,}${41:reference/*CS6 or later PageItem */}});",
+		"description": "align",
+		"scope": "source.js"
+	},
+	"arg": {
+		"prefix": "arg",
+		"body": "arguments.callee(${0:argument});",
+		"description": "arguments.callee",
+		"scope": "source.js"
+	},
+	"colors": {
+		"prefix": "colors",
+		"body": "colors.add({\n  model: ColorModel.${10|PROCESS,SPOT,REGISTRATION,MIXEDINKMODEL|},\n  space: ColorSpace.${20|CMYK,RGB,LAB,MIXEDINK|},\n  colorValue: [${30:0,0,0,0}],\n  name: \"${40:}\"}\n);",
+		"description": "colors.add",
+		"scope": "source.js"
+	},
+	".con": {
+		"prefix": ".con",
+		"body": ".constructor${1:.name${2: === '${0:name}'}}",
+		"description": "constructor.name",
+		"scope": "source.js"
+	},
+	"interap": {
+		"prefix": "interap",
+		"body": "app.displayDialog = DialogModes.${1|ALL,NO,ERROR|};\n",
+		"description": "DialogModes",
+		"scope": "source.js"
+	},
+	"dist": {
+		"prefix": "dist",
+		"body": "distribute(${10:align_distribute_items/* Array of PageItem */},\n  DistributeOptions.${20|BOTTOM_EDGES,HORIZONTAL_CENTERS,HORIZONTAL_SPACE,LEFT_EDGES,RIGHT_EDGES,TOP_EDGES,VERTICAL_CENTERS,VERTICAL_SPACE|}\n  ${30:,AlignDistributeBounds.${31|ITEM_BOUNDS,MARGIN_BOUNDS,PAGE_BOUNDS,SPREAD_BOUNDS|}}\n  ${40:,}${41|true,false|}/* Use Distribute Measurement */\n  ${50:,}${51:absolute_distribute_measurement/* Distance */}\n  ${60:,}${61:reference/*CS6 or later PageItem */});\n",
+		"description": "distribute",
+		"scope": "source.js"
+	},
+	"dos": {
+		"prefix": "dos",
+		"body": "app.doScript(${10:scriptfile or func}, ScriptLanguage.${20|JAVASCRIPT,VISUAL_BASIC|}, [${30:arguments}], UndoModes.${40|FAST_ENTIRE_SCRIPT,AUTO_UNDO,ENTIRE_SCRIPT,SCRIPT_REQUEST|}, \"${50:undo_name}\" );\n",
+		"description": "doScript",
+		"scope": "source.js"
+	},
+	"redraw": {
+		"prefix": "redraw",
+		"body": "app.scriptPreferences.enableRedraw = ${1|false,true|};",
+		"description": "enableRedraw",
+		"scope": "source.js"
+	},
+	"keystr": {
+		"prefix": "keystr",
+		"body": "app.findKeyStrings(\"${1:string}\");",
+		"description": "findKeyStrings",
+		"scope": "source.js"
+	},
+	"keystr1": {
+		"prefix": "keystr",
+		"body": "app.translateKeyString(\"${1:\\$ID/key string}\");",
+		"description": "translateKeyStrings",
+		"scope": "source.js"
+	},
+	"fit": {
+		"prefix": "fit",
+		"body": "fit(FitOptions.${1|APPLY_FRAME_FITTING_OPTIONS,APPLY_FRAME_FITTING_OPTIONS,CENTER_CONTENT,CONTENT_TO_FRAME,FILL_PROPORTIONALLY,FRAME_TO_CONTENT,PROPORTIONALLY|});",
+		"description": "fit",
+		"scope": "source.js"
+	},
+	"for": {
+		"prefix": "for",
+		"body": "for (var ${2:i} in ${1:Things}) {\n  ${100:${1:Things}[${2:i}]}$0\n};",
+		"description": "for in",
+		"scope": "source.js"
+	},
+	"for1": {
+		"prefix": "for",
+		"body": "for (var ${20:i}=0, ${21:len}=${1:Things}.length; ${20:i} < ${21:len} ; ${20:i}++) {\n  ${100:${1:Things}[${20:i}]}$0\n};",
+		"description": "for i < len",
+		"scope": "source.js"
+	},
+	"find": {
+		"prefix": "find",
+		"body": "var target_obj = ${1:app.documents[0]};\nvar find_grep_obj = {\n  findWhat : \"${2:[A-Z]}\"\n};\n\nwith(app.findChangeGrepOptions){\n  includeFootnotes            = false;\n  includeHiddenLayers         = false;\n  includeLockedLayersForFind  = false;\n  includeLockedStoriesForFind = false;\n  includeMasterPages          = false;\n  kanaSensitive               = true;\n  widthSensitive              = true;\n}\n\nvar ${3:match} = grep_find(target_obj, find_grep_obj);\n\nfunction grep_find(target_obj, find_grep_obj){\n  app.findGrepPreferences = NothingEnum.nothing;\n  app.findGrepPreferences.properties = find_grep_obj;\n  var result = target_obj.findGrep();\n  app.findGrepPreferences = NothingEnum.nothing;\n  return result;\n}\n",
+		"description": "grep find",
+		"scope": "source.js"
+	},
+	"find1": {
+		"prefix": "find",
+		"body": "var target_obj = ${1:app.documents[0]};\nvar find_grep_obj = {\n  findWhat : \"${2:[A-Z]}\"\n};\nvar change_grep_obj = {\n  changeTo : \"${3:0}\",\n  pointSize : ${4:36}\n};\n\nwith(app.findChangeGrepOptions){\n  includeFootnotes            = false;\n  includeHiddenLayers         = false;\n  includeLockedLayersForFind  = false;\n  includeLockedStoriesForFind = false;\n  includeMasterPages          = false;\n  kanaSensitive               = true;\n  widthSensitive              = true;\n}\n\ngrep_find_and_change(target_obj, find_grep_obj, change_grep_obj);\n\nfunction grep_find_and_change(target_obj, find_grep_obj, change_grep_obj){\n  app.findGrepPreferences              = NothingEnum.nothing;\n  app.changeGrepPreferences            = NothingEnum.nothing;\n  app.findGrepPreferences.properties   = find_grep_obj;\n  app.changeGrepPreferences.properties = change_grep_obj;\n  target_obj.changeGrep();\n  app.findGrepPreferences              = NothingEnum.nothing;\n  app.changeGrepPreferences            = NothingEnum.nothing;\n}",
+		"description": "grep find and change",
+		"scope": "source.js"
+	},
+	"#inc1": {
+		"prefix": "#inc",
+		"body": "//@include \"${1:${2:untitled}.jsx${3:inc}}\"",
+		"description": "//@include",
+		"scope": "source.js"
+	},
+	"interai": {
+		"prefix": "interai",
+		"body": "app.userInteractionLevel = UserInteractionLevel.${1|DISPLAYALERTS,DONTDISPLAYALERTS|};\n",
+		"description": "UserInteractionLevel",
+		"scope": "source.js"
+	},
+	"intera": {
+		"prefix": "intera",
+		"body": "app.scriptPreferences.userInteractionLevel = UserInteractionLevels.${1|INTERACT_WITH_ALL,INTERACT_WITH_ALERTS,NEVER_INTERACT|};\n",
+		"description": "UserInteractionLevels",
+		"scope": "source.js"
+	},
+	"method": {
+		"prefix": "method",
+		"body": "reflect.methods",
+		"description": "Show Methods",
+		"scope": "source.js"
+	},
+	"run": {
+		"prefix": "run",
+		"body": "if (new File($.fileName).name==$.stack.replace(/[\\[\\]\\n]/g,\"\")) {\n  ${1: //run if runtime}\n}\n",
+		"description": "runtime_if",
+		"scope": "source.js"
+	},
+	"onClick": {
+		"prefix": "onClick",
+		"body": "\n.onClick = function(){\n${1:// body}\n};\n",
+		"description": "onClick function(){};",
+		"scope": "source.jsx"
+	},
+	"self": {
+		"prefix": "self",
+		"body": "var ${1:self} = this;",
+		"description": "self = this",
+		"scope": "source.js"
+	},
+	"pro": {
+		"prefix": "pro",
+		"body": "var obj=app.activeDocument.selection[0];\n\\$.writeln(obj.properties.toSource().replace(/,/g,\",\\n\"));",
+		"description": "Show Properties",
+		"scope": "source.js"
+	},
+	"aipro": {
+		"prefix": "aipro",
+		"body": "#target \"Illustrator\"\nvar o=app.activeDocument.selection[0];\n(function(o){for(var i in o){try{i+=':'+o[i]}catch(e){i+=':'+e}\\$.writeln(i)}})(o);\n",
+		"description": "Show Properties",
+		"scope": "source.js"
+	},
+	"suid": {
+		"prefix": "suid",
+		"body": "${10:#targetengine '${11:session}'}\nvar create_dialog = function () {\n  ${1:w} = new Window('dialog', \"title\", u, {\n    closeButton: true,\n    minimizeButton: true,\n    maximizeButton: false,\n    resizeable: false,\n    borderless: false}\n  );\n  ${1:w}.orientation = 'column';\n  ${1:w}.margins = 5;\n  ${1:w}.spacing = 5;\n  ${1:w}.alignChildren = ['fill', 'fill'];\n\n  var xxx_input = ${1:w}.add('edittext', u, \"xxxxx\");\n  ret.message = xxx_input.text;\n\n  ${1:w}.btn_g = ${1:w}.add('group');\n  var ok_btn  = ${1:w}.btn_g.add('button', u, \"OK\", {name: \"ok\"});\n  var can_btn = ${1:w}.btn_g.add('button', u, \"Cancel\", {name: \"cancel\"});\n\n  xxx_input.onChange = function () {\n    ret.message = this.text;\n  }\n    return ${1:w}\n  }\n\nvar u, ${1:w}, ret = {};\nvar main = create_dialog();\nif (main.show() == 1 && ret) {\n  // Do something ...\n}\nelse {\n  exit();\n}",
+		"description": "ScriptUI dialog template",
+		"scope": "source.js"
+	},
+	"suip": {
+		"prefix": "suip",
+		"body": "${10:#targetengine '${11:session}'}\n\n// var undomode = UndoModes.AUTO_UNDO;\n// var undomode = UndoModes.ENTIRE_SCRIPT;\nvar undomode = UndoModes.FAST_ENTIRE_SCRIPT;\n// var undomode = UndoModes.SCRIPT_REQUEST;\n\n\nvar create_palette = function () {\n  ${1:w} = new Window('${20|palette,window|}', \"${30:title}\", ${40:[${41:x0}, ${42:y0}, ${43:x1}, ${44:y1}]}${45:u}${50:, {\n    closeButton: true,\n    minimizeButton: true,\n    maximizeButton: false,\n    resizeable: false,\n    borderless: false\\}\n  });\n  ${1:w}.orientation = 'column';\n  ${1:w}.margins = 5;\n  ${1:w}.spacing = 5;\n  ${1:w}.alignChildren = ['fill', 'fill'];\n  \n  ${1:w}.btn_g = ${1:w}.add('group');\n  var ok_btn  = ${1:w}.btn_g.add('button', u, \"OK\", {name: \"ok\"});\n  var can_btn = ${1:w}.btn_g.add('button', u, \"Cancel\", {name: \"cancel\"});\n  \n  var task_btn = w.add('button', u, \"task\");\n  \n  var flg = false;\n  ok_btn.onClick = function () {\n    flg = true;\n    w.close();\n  }\n  \n  can_btn.onClick = function () {\n    w.close();\n  }\n  \n  task_btn.onClick = function () {\n    before_do();\n    var task = function () {\n      ${0: // Do something.. }\n    }\n    app.doScript(task, ScriptLanguage.JAVASCRIPT, [], undomode);\n    after_do();\n  }\n  return w\n}\n\nvar before_do = function () {\n}\n\nvar after_do = function () {\n}\n\n\nvar u, ${1:w};\nvar main = create_palette();\nmain.show();",
+		"description": "ScriptUI palette template",
+		"scope": "source.js"
+	},
+	"swi": {
+		"prefix": "swi",
+		"body": "switch(${1:object}) {\n  case \"${21:Things}\": ${22:Do_something}; break;\n  case \"${31:Things}\": ${32:Do_something}; break;\n  case \"${41:Things}\": ${42:Do_something}; break;\n  default: ${50:}; break;\n}",
+		"description": "switch case",
+		"scope": "source.js"
+	},
+	"#ta1": {
+		"prefix": "#ta",
+		"body": "//@target \"${1:${11:InDesign}${12:Illustrator}${13:Photoshop}}\"",
+		"description": "//@target",
+		"scope": "source.js"
+	},
+	"#tae1": {
+		"prefix": "#tae",
+		"body": "//@targetengine \"${0:session}\"",
+		"description": "//@targetengine",
+		"scope": "source.js"
+	},
+	"find2": {
+		"prefix": "find",
+		"body": "var target_obj = ${1:app.documents[0]};\nvar find_txt_obj = {\n  findWhat : \"${2:find}\"\n};\n\nwith(app.findChangeTextOptions){\n  caseSensitive               = false;\n  includeFootnotes            = false;\n  includeHiddenLayers         = false;\n  includeLockedLayersForFind  = false;\n  includeLockedStoriesForFind = false;\n  includeMasterPages          = false;\n  kanaSensitive               = true;\n  wholeWord                   = false;\n  widthSensitive              = true;\n}\n\nvar ${3:match} = text_find(target_obj, find_txt_obj);\n\nfunction text_find(target_obj, find_txt_obj){\n  app.findTextPreferences = NothingEnum.nothing;\n  app.findTextPreferences.properties = find_txt_obj;\n  var result = target_obj.findText();\n  app.findTextPreferences = NothingEnum.nothing;\n  return result;\n}\n",
+		"description": "text_find",
+		"scope": "source.js"
+	},
+	"find3": {
+		"prefix": "find",
+		"body": "var target_obj = ${1:app.documents[0]};\nvar find_txt_obj = {\n  findWhat : \"${2:find}\"\n};\nvar change_txt_obj = {\n  changeTo : \"${3:change}\"\n};\n\nwith(app.findChangeTextOptions){\n  caseSensitive               = false;\n  includeFootnotes            = false;\n  includeHiddenLayers         = false;\n  includeLockedLayersForFind  = false;\n  includeLockedStoriesForFind = false;\n  includeMasterPages          = false;\n  kanaSensitive               = true;\n  wholeWord                   = false;\n  widthSensitive              = true;\n}\n\ntext_find_and_change((target_obj, find_txt_obj, change_txt_obj);\n\nfunction text_find_and_change(target_obj, find_txt_obj, change_txt_obj){\n  app.findTextPreferences              = NothingEnum.nothing;\n  app.changeTextPreferences            = NothingEnum.nothing;\n  app.findTextPreferences.properties   = find_txt_obj;\n  app.changeTextPreferences.properties = change_txt_obj;\n  target_obj.changeText();\n  app.findTextPreferences              = NothingEnum.nothing;\n  app.changeTextPreferences            = NothingEnum.nothing;\n}",
+		"description": "text find and change",
+		"scope": "source.js"
+	},
+	"transf": {
+		"prefix": "transf",
+		"body": "transform(\n  CoordinateSpaces.${10|INNER_COORDINATES,PARENT_COORDINATES,PASTEBOARD_COORDINATES,SPREAD_COORDINATES|},\n  AnchorPoint.${20|BOTTOM_CENTER_ANCHOR,BOTTOM_LEFT_ANCHOR,BOTTOM_RIGHT_ANCHOR,CENTER_ANCHOR,LEFT_CENTER_ANCHOR,RIGHT_CENTER_ANCHOR,TOP_CENTER_ANCHOR,TOP_LEFT_ANCHOR,TOP_RIGHT_ANCHOR|},\n  ${30:transformation_matrix_obj}\n  );\n$40",
+		"description": "transform",
+		"scope": "source.js"
+	},
+	"matrix": {
+		"prefix": "matrix",
+		"body": "var ${0:transformation_matrix_obj} = app.transformationMatrices.add({\n  ${10:clockwiseShearAngle: ${11:0/*Shear*/},}\n  ${20:counterclockwiseRotationAngle: ${21:0/*Rotate*/},}\n  ${30:horizontalScaleFactor: ${31:1/*Horizontal Scale*/},}\n  ${40:verticalScaleFactor: ${41:1/*Vertical Scale*/},}\n  ${50:horizontalTranslation: ${51:0/*Horizontal Traslate*/},}\n  ${60:verticalTranslation: ${61:0/*Vertical Translate*/}}});",
+		"description": "transformationMatrices.add",
+		"scope": "source.js"
+	},
+	"try": {
+		"prefix": "try",
+		"body": "try {\n  ${30://code}\n}\ncatch(x_x){\n  ${1:${10:alert}${11:$.writeln}([\n    x_x.message,\n    x_x.line,\n    $.stack,\n    ].join(\"\\n\"));\n}}\n${20:finally {\n  ${21://code}\n\\}}",
+		"description": "try catch",
+		"scope": "source.js"
+	},
+	"while": {
+		"prefix": "while",
+		"body": "var ${10:i} = ${20:${21:Something}.length};\nwhile (${10:i}--) {\n  ${30:// do something}\n};\n",
+		"description": "while",
+		"scope": "source.js"
+	}
+}

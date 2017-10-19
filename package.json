@@ -2,14 +2,15 @@
     "name": "jsx",
     "displayName": "ExtendScript",
     "description": "Adobe ExtendScript Language Support for Visual Studio Code",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "hennamann",
     "repository": "https://github.com/Hennamann/ExtendScript-for-Visual-Studio-Code",
     "engines": {
         "vscode": "^1.13.0"
     },
     "categories": [
-        "Languages"
+        "Languages",
+        "Snippets"
     ],
     "contributes": {
         "languages": [{
@@ -22,6 +23,11 @@
             "language": "jsx",
             "scopeName": "source.jsx",
             "path": "./syntaxes/jsx.tmLanguage"
-        }]
+        }],
+        "snippets": [
+            {
+                "language": "jsx",
+                "path": "./snippets/snippets.json"
+            }]
     }
 }
