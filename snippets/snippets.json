@@ -7,7 +7,7 @@
 	},
 	"#ta": {
 		"prefix": "#ta",
-		"body": "#target \"${1:${11:InDesign}${12:Illustrator}${13:Photoshop}}\"",
+		"body": "#target \"${1:${11:InDesign}${12:Illustrator}${13:Photoshop}${14:aftereffects}\"",
 		"description": "#target",
 		"scope": "source.js"
 	},
@@ -211,7 +211,7 @@
 	},
 	"#ta1": {
 		"prefix": "#ta",
-		"body": "//@target \"${1:${11:InDesign}${12:Illustrator}${13:Photoshop}}\"",
+		"body": "//@target \"${1:${11:InDesign}${12:Illustrator}${13:Photoshop}${14:aftereffects}}\"",
 		"description": "//@target",
 		"scope": "source.js"
 	},
