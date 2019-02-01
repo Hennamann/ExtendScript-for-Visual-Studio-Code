@@ -16,9 +16,7 @@
     "categories": [
         "Programming Languages",
         "Snippets",
-        "intellisense",
-        "autocompletion",
-        "refactor"
+        "Formatters"
     ],
     "contributes": {
         "languages": [
