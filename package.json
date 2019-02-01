@@ -2,33 +2,73 @@
     "name": "jsx",
     "displayName": "ExtendScript",
     "description": "Adobe ExtendScript Language Support for Visual Studio Code",
-    "version": "1.0.1",
-    "publisher": "hennamann",
+    "version": "1.1.0",
+    "publisher": "Hennamann",
     "repository": "https://github.com/Hennamann/ExtendScript-for-Visual-Studio-Code",
-    "icon": "extendscript.png",
+    "bugs": {
+        "url": "https://github.com/Hennamann/ExtendScript-for-Visual-Studio-Code/issues"
+      },
+    "license": "MIT",
+    "icon": "images/extendscript.png",
     "engines": {
-        "vscode": "^1.13.0"
+        "vscode": "^1.22.0"
     },
     "categories": [
-        "Languages",
-        "Snippets"
+        "Programming Languages",
+        "Snippets",
+        "intellisense",
+        "autocompletion",
+        "refactor"
     ],
     "contributes": {
-        "languages": [{
-            "id": "jsx",
-            "aliases": ["ExtendScript", "jsx"],
-            "extensions": [".jsx",".jsxinc"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "jsx",
-            "scopeName": "source.jsx",
-            "path": "./syntaxes/jsx.tmLanguage"
-        }],
+        "languages": [
+            {
+                "id": "jsx",
+                "aliases": [
+                    "ExtendScript",
+                    "jsx"
+                ],
+                "extensions": [
+                    ".jsx",
+                    ".jsxinc"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "jsx",
+                "scopeName": "source.jsx",
+                "path": "./syntaxes/jsx.tmLanguage"
+            }
+        ],
         "snippets": [
             {
                 "language": "jsx",
                 "path": "./snippets/snippets.json"
-            }]
+            }
+        ]
+    },
+    "activationEvents": [
+        "onLanguage:extendscript",
+        "onLanguage:jsx"
+    ],
+    "main": "./out/extension",
+    "scripts": {
+        "build": "tsc -p .",
+        "watch": "tsc -w -p .",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "lint": "tslint -c tslint.json \"src/**/*.ts\""
+    },
+    "devDependencies": {
+        "@types/node": "^7.0.31",
+        "tslint": "^5.0.0",
+        "typescript": "^2.8.3",
+        "vsce": "^1.8.1",
+        "vscode": "^1.0.0"
+    },
+    "dependencies": {
+        "javascript-typescript-langserver": "^2.9.0",
+        "vscode-languageclient": "^4.1.3"
     }
 }
