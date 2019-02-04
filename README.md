@@ -13,4 +13,12 @@ Initial release of the extension.
 - Added symbol support
 - Added Intellisense support
 - General Fixes
+
 Do note that the symbol support added is based on Javascript/Typescript, which means most things work as expected but vscode may return weird errors in places where extendscripts es4 differs from the newer es6.
+
+## TODO
+- [ ] Add formatting support – https://github.com/Hennamann/ExtendScript-for-Visual-Studio-Code/issues/3 
+- [ ] Add custom Extendscript Language Server, for more info see Notes section below.
+
+## Notes
+This extension is far from perfect, particularly in terms of Symbol and intellisense support. This is due to the use of the Sourcegraph Javascript & Typescript language server, this works well for Javascript and Typescript, but does cause som issues with Extendscript. The fix for this would be to create our own Language Server for extendscript, which would not only be beneficial for this extension/vscode but also for other editors like Vim, Neovim, Emacs, Atom, Sublime, Jetbrains IDEs and more. For more information about the current effort in creating a proper language server for Extendscript, check out this repo: https://github.com/Hennamann/extendscript-language-server
