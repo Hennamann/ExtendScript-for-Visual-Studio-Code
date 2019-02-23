@@ -6,7 +6,7 @@ It supports both .jsx and .jsxinc files.
 
 ### 1.0.0
 
-Initial release of the extension.
+- Initial release of the extension.
 
 ### 1.1.0
 
@@ -15,6 +15,11 @@ Initial release of the extension.
 - General Fixes
 
 Do note that the symbol support added is based on Javascript/Typescript, which means most things work as expected but vscode may return weird errors in places where extendscripts es4 differs from the newer es6.
+
+### 1.1.1
+
+- Changed the extension icon by request of Adobe.
+
 
 ## TODO
 - [ ] Add formatting support – https://github.com/Hennamann/ExtendScript-for-Visual-Studio-Code/issues/3 
