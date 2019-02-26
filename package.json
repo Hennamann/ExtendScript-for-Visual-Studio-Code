@@ -2,7 +2,7 @@
     "name": "jsx",
     "displayName": "ExtendScript",
     "description": "Adobe ExtendScript Language Support for Visual Studio Code",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "publisher": "Hennamann",
     "repository": "https://github.com/Hennamann/ExtendScript-for-Visual-Studio-Code",
     "bugs": {
@@ -33,7 +33,11 @@
                 "configuration": "./language-configuration.json"
             }
         ],
-            "breakpoints": [{ "language": "jsx" }],
+        "breakpoints": [
+            {
+                "language": "jsx"
+            }
+        ],
         "grammars": [
             {
                 "language": "jsx",
@@ -67,7 +71,9 @@
         "vscode": "^1.0.0"
     },
     "dependencies": {
+        "@types/js-beautify": "^1.8.0",
         "javascript-typescript-langserver": "^2.9.0",
+        "js-beautify": "^1.8.9",
         "vscode-languageclient": "^4.1.3"
     }
 }

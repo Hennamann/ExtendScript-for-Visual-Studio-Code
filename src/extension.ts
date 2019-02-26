@@ -3,6 +3,7 @@ import { spawn } from 'child_process';
 import * as vscode from 'vscode';
 import { LanguageClient, LanguageClientOptions, ServerOptions, RevealOutputChannelOn } from 'vscode-languageclient';
 import * as url from 'url';
+import * as beautify from 'js-beautify'
 
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
 
@@ -32,6 +33,14 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
     // Create the language client and start the client.
     client = new LanguageClient('ExtendScript Language Server', serverOptions, clientOptions);
     const disposable = client.start();
+
+    // Create a documentformattingprovider for ExtendScript files, utilizing js-beautify.
+    vscode.languages.registerDocumentFormattingEditProvider('jsx', {
+        provideDocumentFormattingEdits(document: vscode.TextDocument): vscode.TextEdit[] {
+            const fullRange = document.validateRange(new vscode.Range(0, 0, Number.MAX_VALUE, Number.MAX_VALUE));
+            return [vscode.TextEdit.replace(fullRange, beautify(document.getText()))];
+        }
+    });
 
     // Push the disposable to the context's subscriptions so that the
     // client can be deactivated on extension deactivation
