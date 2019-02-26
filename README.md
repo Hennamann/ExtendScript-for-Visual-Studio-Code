@@ -24,9 +24,13 @@ Do note that the symbol support added is based on Javascript/Typescript, which m
 
 - Added breakpoint support for ExtendScript files, this should make the plugin 100% compatible with the new ExtendScript debugger extension from Adobe.
 
+### 1.2.1
+
+- Added formatting support for ExtendScript files, using js-beautify.
+
 ## TODO
-- [ ] Add formatting support – https://github.com/Hennamann/ExtendScript-for-Visual-Studio-Code/issues/3 
+- [X] Add formatting support – https://github.com/Hennamann/ExtendScript-for-Visual-Studio-Code/issues/3 
 - [ ] Add custom Extendscript Language Server, for more info see Notes section below.
 
 ## Notes
-This extension is far from perfect, particularly in terms of Symbol and intellisense support. This is due to the use of the Sourcegraph Javascript & Typescript language server, this works well for Javascript and Typescript, but does cause som issues with Extendscript. The fix for this would be to create our own Language Server for extendscript, which would not only be beneficial for this extension/vscode but also for other editors like Vim, Neovim, Emacs, Atom, Sublime, Jetbrains IDEs and more. For more information about the current effort in creating a proper language server for Extendscript, check out this repo: https://github.com/Hennamann/extendscript-language-server
+This extension is far from perfect, particularly in terms of Symbol and Intellisense support. This is due to the use of the Sourcegraph Javascript & Typescript language server, this works well for Javascript and Typescript, but does cause som issues with Extendscript. The fix for this would be to create our own Language Server for extendscript, which would not only be beneficial for this extension/vscode but also for other editors like Vim, Neovim, Emacs, Atom, Sublime, Jetbrains IDEs and more. For more information about the current effort in creating a proper language server for Extendscript, check out this repo: https://github.com/Hennamann/extendscript-language-server
