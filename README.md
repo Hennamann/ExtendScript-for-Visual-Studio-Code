@@ -29,7 +29,8 @@ Do note that the symbol support added is based on Javascript/Typescript, which m
 - Added formatting support for ExtendScript files, using js-beautify.
 
 ## TODO
-- [X] Add formatting support – https://github.com/Hennamann/ExtendScript-for-Visual-Studio-Code/issues/3 
+- [ ] Improve formatting support (Set formatting options via config)
+- [ ] Improve current Intellisense support, if possible.
 - [ ] Add custom Extendscript Language Server, for more info see Notes section below.
 
 ## Notes
