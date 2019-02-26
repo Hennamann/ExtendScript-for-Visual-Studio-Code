@@ -20,6 +20,9 @@ Do note that the symbol support added is based on Javascript/Typescript, which m
 
 - Changed the extension icon by request of Adobe.
 
+### 1.2.0
+
+- Added breakpoint support for ExtendScript files, this should make the plugin 100% compatible with the new ExtendScript debugger extension from Adobe.
 
 ## TODO
 - [ ] Add formatting support – https://github.com/Hennamann/ExtendScript-for-Visual-Studio-Code/issues/3 

@@ -27,12 +27,6 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
             code2Protocol: uri => url.format(url.parse(uri.toString(true))),
             protocol2Code: str => vscode.Uri.parse(str)
         },
-        synchronize: {
-            // Synchronize the setting section 'php' to the server
-            // configurationSection: 'typescript',
-            // Notify the server about changes to PHP files in the workspace
-            // fileEvents: vscode.workspace.createFileSystemWatcher('**/*.ts')
-        }
     };
 
     // Create the language client and start the client.
