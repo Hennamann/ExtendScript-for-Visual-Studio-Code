@@ -1,14 +1,14 @@
 {
-	"compilerOptions": {
-		"target": "ES6",
-		"module": "commonjs",
-		"moduleResolution": "node",
-		"outDir": "out",
-		"lib": [
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "out",
+    "lib": [
       "es6"
     ],
     "noImplicitAny": true,
-		"sourceMap": true,
+    "sourceMap": true,
     "rootDir": "src",
     "strictNullChecks": true,
     "noImplicitThis": true,
@@ -17,7 +17,7 @@
     "allowUnreachableCode": false,
     "allowUnusedLabels": false
   },
-	"include": [
-		"src/**/*.ts"
-	]
+  "include": [
+    "src/**/*.ts"
+  ]
 }

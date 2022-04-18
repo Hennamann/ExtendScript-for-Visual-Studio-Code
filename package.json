@@ -2,9 +2,12 @@
     "name": "jsx",
     "displayName": "ExtendScript",
     "description": "Adobe ExtendScript Language Support for Visual Studio Code",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "publisher": "Hennamann",
-    "repository": "https://github.com/Hennamann/ExtendScript-for-Visual-Studio-Code",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Hennamann/ExtendScript-for-Visual-Studio-Code.git"
+    },
     "bugs": {
         "url": "https://github.com/Hennamann/ExtendScript-for-Visual-Studio-Code/issues"
     },
@@ -19,35 +22,205 @@
         "Formatters"
     ],
     "contributes": {
+        "configuration": {
+            "title": "Extendscript",
+            "properties": {
+                "extendscript.indentSize": {
+                    "type": "number",
+                    "default": 4,
+                    "description": "Choose how many spaces to use for indentation. (default: 4)",
+                    "order": 1
+                },
+                "extendscript.indentChar": {
+                    "type": "string",
+                    "default": " ",
+                    "description": "Select the character to use for indentation. (default: space)",
+                    "order": 2
+                },
+                "extendscript.indentWithTabs": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Use tabs for indentation instead of spaces. (default: false)",
+                    "order": 3
+                },
+                "extendscript.EOL": {
+                    "type": "string",
+                    "default": "\\n",
+                    "description": "Select the end of line character. (default: \\n)",
+                    "order": 4
+                },
+                "extendscript.endWithNewline": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Add a newline at the end of the file. (default: false)",
+                    "order": 5
+                },
+                "extendscript.indentLevel": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "Choose how many levels of indentation to use. (default: 0)",
+                    "order": 6
+                },
+                "extendscript.preserveNewlines": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Preserve all newlines. (default: true)",
+                    "order": 7
+                },
+                "extendscript.maxPreserveNewlines": {
+                    "type": "number",
+                    "default": 10,
+                    "description": "Choose how many newlines to preserve. (default: 10)",
+                    "order": 8
+                },
+                "extendscript.spaceInParen": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Add a space between the opening and closing parenthesis. (default: false)",
+                    "order": 9
+                },
+                "extendscript.spaceInEmptyParen": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Add a space between the opening and closing empty parenthesis. (default: false)",
+                    "order": 10
+                },
+                "extendscript.jslintHappy": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Enable jslint-stricter mode. (default: false)",
+                    "order": 11
+                },
+                "extendscript.spaceAfterAnonFunction": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Add a space after the anonymous function. (default: false)",
+                    "order": 12
+                },
+                "extendscript.spaceAfterNamedFunction": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Add a space after the named function. (default: false)",
+                    "order": 13
+                },
+                "extendscript.braceStyle": {
+                    "type": "string",
+                    "default": "collapse",
+                    "enum": [
+                        "collapse",
+                        "expand",
+                        "end-expand",
+                        "none"
+                    ],
+                    "enumDescriptions": [
+                        "Collapse the braces onto one line.",
+                        "Expand the braces onto one line.",
+                        "Expand the braces onto one line and put the closing brace on the next line.",
+                        "Leave the braces on the same line."
+                    ],
+                    "description": "Select the brace style. (default: collapse)",
+                    "order": 14
+                },
+                "extendscript.unindentChainedMethods": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Unindent chained method calls. (default: false)",
+                    "order": 15
+                },
+                "extendscript.breakChainedMethods": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Break chained method calls across subsequent lines. (default: false)",
+                    "order": 16
+                },
+                "extendscript.keepArrayIndentation": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Preserve array indentation. (default: false)",
+                    "order": 17
+                },
+                "extendscript.unescapeStrings": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Decode printable characters encoded in xNN notation. (default: false)",
+                    "order": 18
+                },
+                "extendscript.wrapLineLength": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "Wrap lines that exceed N characters. (default: 0)",
+                    "order": 19
+                },
+                "extendscript.e4x": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Pass E4X xml literals through untouched. (default: false)",
+                    "order": 20
+                },
+                "extendscript.commaFirst": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Put commas at the beginning of new line instead of end. (default: false)",
+                    "order": 21
+                },
+                "extendscript.operatorPosition": {
+                    "type": "string",
+                    "default": "before-newline",
+                    "enum": [
+                        "before-newline",
+                        "after-newline",
+                        "preserve-newline"
+                    ],
+                    "enumDescriptions": [
+                        "Puts the operator on the new line.",
+                        "Puts the operator on the same line as the last operand.",
+                        "Puts the operator on the same line as the new line."
+                    ],
+                    "description": "Select where to put the operator. (default: before-newline)",
+                    "order": 22
+                },
+                "extendscript.indentEmptyLines": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Indent empty lines. (default: false)",
+                    "order": 23
+                }
+            }
+        },
         "languages": [
             {
-                "id": "jsx",
+                "id": "extendscript",
                 "aliases": [
+                    "Extendscript",
                     "ExtendScript",
-                    "jsx"
+                    "jsx",
+                    "jsxbin"
                 ],
                 "extensions": [
                     ".jsx",
-                    ".jsxinc"
+                    ".jsxbin"
                 ],
                 "configuration": "./language-configuration.json"
             }
         ],
         "breakpoints": [
             {
-                "language": "jsx"
+                "language": "extendscript"
             }
         ],
         "grammars": [
             {
-                "language": "jsx",
-                "scopeName": "source.jsx",
-                "path": "./syntaxes/jsx.tmLanguage"
+                "language": "extendscript",
+                "scopeName": "source.js.extendscript",
+                "path": "./syntaxes/jsx.tmLanguage",
+                "injectTo": [
+                    "source.js"
+                ]
             }
         ],
         "snippets": [
             {
-                "language": "jsx",
+                "language": "extendscript",
                 "path": "./snippets/snippets.json"
             }
         ]
@@ -68,12 +241,10 @@
         "tslint": "^5.0.0",
         "typescript": "^2.8.3",
         "vsce": "^1.8.1",
-        "vscode": "^1.0.0"
+        "vscode": "^1.1.37"
     },
     "dependencies": {
         "@types/js-beautify": "^1.8.0",
-        "javascript-typescript-langserver": "^2.9.0",
-        "js-beautify": "^1.8.9",
-        "vscode-languageclient": "^4.1.3"
+        "js-beautify": "^1.8.9"
     }
 }

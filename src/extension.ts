@@ -1,48 +1,15 @@
-import * as path from 'path';
-import { spawn } from 'child_process';
 import * as vscode from 'vscode';
-import { LanguageClient, LanguageClientOptions, ServerOptions, RevealOutputChannelOn } from 'vscode-languageclient';
-import * as url from 'url';
 import * as beautify from 'js-beautify'
 
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
 
-    let client: LanguageClient;
-
-    const serverOptions: ServerOptions = async () => {
-        const childProcess = spawn(process.execPath, [path.resolve(__dirname, '..', 'node_modules', 'javascript-typescript-langserver', 'lib', 'language-server-stdio.js')]);
-        childProcess.stderr.on('data', (chunk: Buffer) => {
-            client.error(chunk + '');
-        });
-        return childProcess;
-    };
-
-    // Options to control the language client
-    const clientOptions: LanguageClientOptions = {
-        revealOutputChannelOn: RevealOutputChannelOn.Never,
-        // Register the server for extendscript documents
-        documentSelector: ['extendscript', 'jsx'],
-        uriConverters: {
-            // VS Code by default %-encodes even the colon after the drive letter
-            // NodeJS handles it much better
-            code2Protocol: uri => url.format(url.parse(uri.toString(true))),
-            protocol2Code: str => vscode.Uri.parse(str)
-        },
-    };
-
-    // Create the language client and start the client.
-    client = new LanguageClient('ExtendScript Language Server', serverOptions, clientOptions);
-    const disposable = client.start();
+    const conf = vscode.workspace.getConfiguration('extendscript')
 
     // Create a documentformattingprovider for ExtendScript files, utilizing js-beautify.
-    vscode.languages.registerDocumentFormattingEditProvider('jsx', {
+    vscode.languages.registerDocumentFormattingEditProvider('extendscript', {
         provideDocumentFormattingEdits(document: vscode.TextDocument): vscode.TextEdit[] {
             const fullRange = document.validateRange(new vscode.Range(0, 0, Number.MAX_VALUE, Number.MAX_VALUE));
-            return [vscode.TextEdit.replace(fullRange, beautify(document.getText()))];
+            return [vscode.TextEdit.replace(fullRange, beautify(document.getText(), { indent_size: conf.get('indentSize'), indent_char: conf.get('indentChar'), indent_with_tabs: conf.get('indentWithTabs'), eol: conf.get('EOL'), end_with_newline: conf.get('endWithNewline'), indent_level: conf.get('indentLevel'), preserve_newlines: conf.get('preserveNewlines'), max_preserve_newlines: conf.get('maxPreserveNewlines'), space_in_paren: conf.get('spaceInParen'), space_in_empty_paren: conf.get('spaceInEmptyParen'), jslint_happy: conf.get('jslintHappy'), space_after_anon_function: conf.get('spaceAfterAnonFunction'), space_after_named_function: conf.get('spaceAfterNamedFunction'), brace_style: conf.get('braceStyle'), unindent_chained_methods: conf.get('unindentChainedMethods'), break_chained_methods: conf.get('breakChainedMethods'), keep_array_indentation: conf.get('keepArrayIndentation'), unescape_strings: conf.get('unescapeStrings'), wrap_line_length: conf.get('wrapLineLength'), e4x: conf.get('e4x'), comma_first: conf.get('commaFirst'), operator_position: conf.get('operatorPosition'), indent_empty_lines: conf.get('indentEmptyLines') }))];
         }
     });
-
-    // Push the disposable to the context's subscriptions so that the
-    // client can be deactivated on extension deactivation
-    context.subscriptions.push(disposable);
 }
