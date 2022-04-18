@@ -2,6 +2,8 @@
 This extension provides support for Adobe ExtendScript in Visual Studio Code.
 It supports both .jsx and .jsxinc files.
 
+NOTE: This is not an official Adobe Extension! (But… Adobe devs may or may not be using it…)
+
 ## Release Notes
 
 ### 1.0.0
@@ -28,8 +30,12 @@ Do note that the symbol support added is based on Javascript/Typescript, which m
 
 - Added formatting support for ExtendScript files, using js-beautify.
 
+### 1.3.0
+
+- Changed language server to the built in one to improve compatibility and fix random crashes. 
+- Added config options for the formatter, allowing you to specify how extendscript files should be formatted. e.g set indent size.
+
 ## TODO
-- [ ] Improve formatting support (Set formatting options via config)
 - [ ] Improve current Intellisense support, if possible.
 - [ ] Add custom Extendscript Language Server, for more info see Notes section below.
 
